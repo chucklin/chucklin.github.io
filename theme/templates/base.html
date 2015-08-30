@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    {% endblock head %}
+</head>
+
+<body id="index" class="home">
+    <header id="banner" class="body">
+        <div id="site-title"><a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></div>
+        <nav id="menu"><ul>
+            {% for title, link in MENUITEMS %}
+                <li><a class="link-{{title}}" href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+        </ul></nav><!-- /#menu -->
+    </header><!-- /#banner -->
+    <main>
+        {% block content %}
+        {% endblock %}
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+            </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+    </main>
+</body>
+</html>
